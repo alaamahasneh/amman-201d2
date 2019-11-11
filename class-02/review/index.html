@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Lab01</title>
+    <style>
+      h1 {
+        background-color: yellow;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header></header>
+    <main>
+      <h1>Class 1 Lab</h1>
+      <p style="background-color: violet; color: orangered;">
+        Tell me your name please?
+      </p>
+      <p style="background-color: seagreen; color: aquamarine;">
+        How old are you?
+      </p>
+      <p style="background-color: red; color: khaki;">
+        Whats your favourite color?
+      </p>
+      <p style="background-color: chocolate; color: lightcoral;">
+        Do you have a PC?
+      </p>
+    </main>
+    <footer></footer>
+    <script>
+      var name = prompt('Tell me your name please?');
+      console.log('Name =', name);
+      alert('Welcome to my page ' + name);
+      var age = prompt('How old are you? ');
+      console.log('Age =', age);
+      alert('Iam a 23 years old and your age is ' + age);
+      var color = prompt('Whats your favourite color? ');
+      console.log('Color =', color);
+      alert(' Ohhh Nice color ' + color);
+      var country = prompt("What's yor favourite country to vist");
+      console.log('Country =', country);
+      alert(
+        ' Your favourite country is ' +
+          country +
+          ' your name is ' +
+          name +
+          ' your age is ' +
+          age +
+          ' your favourite color is ' +
+          color,
+      );
+    </script>
+  </body>
+</html>
