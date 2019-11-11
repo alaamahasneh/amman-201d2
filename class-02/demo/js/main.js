@@ -59,3 +59,15 @@ switch (color) {
     console.log('noooooo');
     break;
 }
+
+//working with arrays
+
+var arr = ['a', 'b', 'c']; //define array
+
+console.log(arr[0]); // log the value at index 0
+arr.push('d'); // add d to the end of the array
+arr.pop(); //remove the last element from array
+arr.shift('e'); // add element to the beginning of array
+arr.unshift(); // remove first element
+
+console.log('YES'.toLowerCase()); //convert string to lowercase
