@@ -1,0 +1,19 @@
+p {
+    color:rgb(10, 13, 22) ;
+}
+header {
+    size: 50pc;
+    color: rgb(19, 13, 10);
+    text-emphasis:center ;
+    background-color: rgb(108, 187, 180);
+}
+li {
+    width: 2px;
+}
+body {
+    color: rgb(39, 19, 19);
+    background-color: rosybrown;
+}
+head {
+    background-color: rosybrown;
+}
