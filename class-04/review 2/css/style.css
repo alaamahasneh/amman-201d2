@@ -1,0 +1,21 @@
+html{
+    background-image: url("http://getwallpapers.com/wallpaper/full/9/7/e/1033631-most-popular-wood-wallpaper-1080p-1920x1080.jpg");
+}
+    header {
+        text-align: center;
+    }
+    
+    header nav ul li{
+        display: inline-block;
+        margin: 20px;
+    }
+    main section img{
+        display: block;
+        margin: left;
+        margin: right;
+        margin: auto;
+        width: 500px;
+    }
+    footer{
+        text-align: center;
+    }

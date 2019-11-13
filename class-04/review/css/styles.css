@@ -1,0 +1,102 @@
+.li {
+  background: palegoldenrod;
+}
+
+h1 {
+  color: rgba(212, 0, 99, 0.76);
+  text-align: center;
+  font-size: 50px;
+}
+html {
+  background-image: url("https://www.netpremacy.com/wp-content/uploads/2018/09/Background-website-01.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 800px;
+}
+
+.hi {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  border-radius: 50%;
+}
+.pic2 {
+  float: right;
+  border-radius: 20%;
+  width: 300px;
+  height: 200px;
+}
+/* The alert message box */
+.alert {
+  padding: 60px;
+  background-color: #f44336; /* Red */
+  color: palevioletred;
+  margin-bottom: 15px;
+}
+.p {
+  font-style: oblique;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.general {
+  color: rgb(119, 58, 89);
+  text-align: center;
+  font-size: 40px;
+}
+.gif {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+  border-radius: 50%;
+}
+.g {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+}
+.st {
+  color: rgb(93, 43, 112);
+  font-size: 25px;
+  text-align: center;
+}
+
+.job {
+  color: rgb(119, 58, 89);
+  text-align: center;
+  font-size: 40px;
+}
+.education {
+  color: rgb(119, 58, 89);
+  text-align: center;
+  font-size: 40px;
+}
+.list {
+  color: rgb(78, 99, 45);
+  font-size: 25px;
+  text-align: center;
+}
+li {
+  color: rgb(78, 99, 45);
+  font-size: 25px;
+  text-align: center;
+}
+.grad {
+  color: rgb(78, 99, 45);
+  font-size: 25px;
+  text-align: center;
+}
+.civil {
+  color: rgb(78, 99, 45);
+  font-size: 25px;
+  text-align: center;
+}
+.top {
+  color: rgb(119, 58, 89);
+  text-align: center;
+  font-size: 40px;
+}
