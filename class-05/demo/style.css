@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css?family=Indie+Flower&display=swap");
+body {
+  background: coral;
+}
+
+#intro {
+  /* font */
+  font-family: fantasy;
+}
+
+#details {
+  /* different font */
+  font-family: monospace;
+}
+#more-details {
+  /* google font */
+  font-family: "Indie Flower", cursive;
+}

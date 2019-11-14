@@ -1,0 +1,40 @@
+html{
+    background-image: url(https://storage.pixteller.com/designs/designs-images/2019-03-27/05/simple-background-backgrounds-passion-simple-1-5c9b95c3a34f9.png);
+}
+
+header{
+    text-align: center;
+    font-size: xx-large;
+    color: brown;
+    margin-top: 20px;
+}
+
+p{
+    margin-top: 20px;
+    text-align: center;
+    font-size: large;
+    margin-top: 25px;
+}
+
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    height: 200px;
+}
+
+h3{
+    text-align: center;
+    margin: 50px;
+    font-size: 20px;
+}
+
+li{
+    text-align: center;
+}
+ol ul{
+    list-style-type: decimal;
+}
+
+
