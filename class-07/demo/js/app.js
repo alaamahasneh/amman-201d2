@@ -11,137 +11,126 @@
 // breed (e.g: Egyptian Mau, Persian,British Shorthair)
 
 // TODO: dynamically generate kitten objects using form data
-
-var frankie = {
-  name: "Frankie",
-  age: 0,
-  likes: ["cuddling", "chasing string", "napping", "food"],
-  imagePath: `images/frankie.jpeg`,
-  goodWithKids: true,
-  goodWithDogs: false,
-  goodWithOtherCats: true,
-  breed: "British Shorthair",
-  getAge: function(min, max) {
-    this.age = getRandomNumber(min, max);
-  },
-  render: function() {
-    var container = document.getElementById("kittenProfiles");
-    // create and append article to the container
-    var articleEl = document.createElement("article");
-    container.appendChild(articleEl);
-    // create h2 with frankie name as textContent and append it to the article
-    var h2El = document.createElement("h2");
-    articleEl.appendChild(h2El);
-    h2El.textContent = this.name;
-    // create p with frankie age string and append it to article
-    var pEl = document.createElement("p");
-    articleEl.appendChild(pEl);
-    pEl.textContent = `${this.name} is adorable, and is ${this.age} months old.`;
-    // create ul and append it to article
-
-    var ulEl = document.createElement("ul");
-    articleEl.appendChild(ulEl);
-    // append li's to the ul containing frankie interests
-    for (let i = 0; i < this.likes.length; i++) {
-      var liEl = document.createElement("li");
-      ulEl.appendChild(liEl);
-      liEl.textContent = this.likes[i];
-    }
-    // create image and set the src  attribute to frankie image path then append it to the article
-    var imgEl = document.createElement("img");
-    articleEl.appendChild(imgEl);
-    imgEl.setAttribute("src", this.imagePath);
-  }
+var cats = [];
+function Cat(
+  name,
+  likes,
+  imagePath,
+  goodWithKids,
+  goodWithDogs,
+  goodWithOtherCats,
+  breed
+) {
+  this.name = name;
+  this.age = 0;
+  this.likes = likes;
+  this.imagePath = imagePath;
+  this.goodWithKids = goodWithKids;
+  this.goodWithDogs = goodWithDogs;
+  this.goodWithOtherCats = goodWithOtherCats;
+  this.breed = breed;
+  cats.push(this);
+}
+Cat.prototype.getAge = function(min, max) {
+  this.age = getRandomNumber(min, max);
 };
-var jumper = {
-  name: "Jumper",
-  age: 0,
-  likes: ["cuddling", "napping"],
-  imagePath: `images/jumper.jpeg`,
-  goodWithKids: false,
-  goodWithDogs: true,
-  goodWithOtherCats: false,
-  breed: "Persian",
-  getAge: function(min, max) {
-    this.age = getRandomNumber(min, max);
-  },
-  render: function() {
-    var container = document.getElementById("kittenProfiles");
-    // create and append article to the container
-    var articleEl = document.createElement("article");
-    container.appendChild(articleEl);
-    // create h2 with frankie name as textContent and append it to the article
-    var h2El = document.createElement("h2");
-    articleEl.appendChild(h2El);
-    h2El.textContent = this.name;
-    // create p with frankie age string and append it to article
-    var pEl = document.createElement("p");
-    articleEl.appendChild(pEl);
-    pEl.textContent = `${this.name} is adorable, and is ${this.age} months old.`;
-    // create ul and append it to article
+Cat.prototype.render = function() {
+  var container = document.getElementById("kittenProfiles");
+  // create and append article to the container
+  var articleEl = document.createElement("article");
+  container.appendChild(articleEl);
+  // create h2 with frankie name as textContent and append it to the article
+  var h2El = document.createElement("h2");
+  articleEl.appendChild(h2El);
+  h2El.textContent = this.name;
+  // create p with frankie age string and append it to article
+  var pEl = document.createElement("p");
+  articleEl.appendChild(pEl);
+  pEl.textContent = `${this.name} is adorable, and is ${this.age} months old.`;
+  // create ul and append it to article
 
-    var ulEl = document.createElement("ul");
-    articleEl.appendChild(ulEl);
-    // append li's to the ul containing frankie interests
-    for (let i = 0; i < this.likes.length; i++) {
-      var liEl = document.createElement("li");
-      ulEl.appendChild(liEl);
-      liEl.textContent = this.likes[i];
-    }
-    // create image and set the src  attribute to frankie image path then append it to the article
-    var imgEl = document.createElement("img");
-    articleEl.appendChild(imgEl);
-    imgEl.setAttribute("src", this.imagePath);
+  var ulEl = document.createElement("ul");
+  articleEl.appendChild(ulEl);
+  // append li's to the ul containing frankie interests
+  for (let i = 0; i < this.likes.length; i++) {
+    var liEl = document.createElement("li");
+    ulEl.appendChild(liEl);
+    liEl.textContent = this.likes[i];
   }
-};
-var serena = {
-  name: "Serena",
-  age: 0,
-  likes: ["cuddling", "napping", "chasing string"],
-  imagePath: `images/serena.jpeg`,
-  goodWithKids: true,
-  goodWithDogs: true,
-  goodWithOtherCats: false,
-  breed: "Persian",
-  getAge: function(min, max) {
-    this.age = getRandomNumber(min, max);
-  },
-  render: function() {
-    var container = document.getElementById("kittenProfiles");
-    // create and append article to the container
-    var articleEl = document.createElement("article");
-    container.appendChild(articleEl);
-    // create h2 with frankie name as textContent and append it to the article
-    var h2El = document.createElement("h2");
-    articleEl.appendChild(h2El);
-    h2El.textContent = this.name;
-    // create p with frankie age string and append it to article
-    var pEl = document.createElement("p");
-    articleEl.appendChild(pEl);
-    pEl.textContent = `${this.name} is adorable, and is ${this.age} months old.`;
-    // create ul and append it to article
+  // 1 create table
+  var tableEl = document.createElement("table");
+  // 2 create first row
+  var headerRowEl = document.createElement("tr");
+  // 3 create second row
+  var dataRowEl = document.createElement("tr");
+  // 4 create the 3 table headers and assign values to the textContent
+  var th1El = document.createElement("th");
+  th1El.textContent = "good with cats";
+  var th2El = document.createElement("th");
+  th2El.textContent = "good with kids";
+  var th3El = document.createElement("th");
+  th3El.textContent = "good with dogs";
 
-    var ulEl = document.createElement("ul");
-    articleEl.appendChild(ulEl);
-    // append li's to the ul containing frankie interests
-    for (let i = 0; i < this.likes.length; i++) {
-      var liEl = document.createElement("li");
-      ulEl.appendChild(liEl);
-      liEl.textContent = this.likes[i];
-    }
+  // 5 append the table headers to the first row
+  headerRowEl.appendChild(th1El);
+  headerRowEl.appendChild(th2El);
+  headerRowEl.appendChild(th3El);
+  // 6 creat 3 table data and assign values to the textContent
+  // 7 append the table data to the second row
 
-    // create image and set the src  attribute to frankie image path then append it to the article
-    var imgEl = document.createElement("img");
-    articleEl.appendChild(imgEl);
-    imgEl.setAttribute("src", this.imagePath);
-  }
+  var td1El = document.createElement("td");
+  td1El.textContent = this.goodWithOtherCats;
+  dataRowEl.appendChild(td1El);
+  var td2El = document.createElement("td");
+  td2El.textContent = this.goodWithKids;
+  dataRowEl.appendChild(td2El);
+  var td3El = document.createElement("td");
+  td3El.textContent = this.goodWithDogs;
+  dataRowEl.appendChild(td3El);
+  // 8 append the two rows to the table
+  tableEl.appendChild(headerRowEl);
+  tableEl.appendChild(dataRowEl);
+  // 9 append the table to the article
+  articleEl.appendChild(tableEl);
+
+  // create image and set the src  attribute to frankie image path then append it to the article
+  var imgEl = document.createElement("img");
+  articleEl.appendChild(imgEl);
+  imgEl.setAttribute("src", this.imagePath);
 };
-frankie.getAge(3, 7);
-frankie.render();
-jumper.getAge(3, 7);
-jumper.render();
-serena.getAge(3, 7);
-serena.render();
+new Cat(
+  "Frankie",
+  ["cuddling", "chasing string", "napping", "food"],
+  `images/frankie.jpeg`,
+  true,
+  false,
+  true,
+  "British Shorthair"
+);
+new Cat(
+  "Jumper",
+  ["cuddling", "napping"],
+  `images/jumper.jpeg`,
+  false,
+  true,
+  false,
+  "Persian"
+);
+new Cat(
+  "Serena",
+  ["cuddling", "napping", "chasing string"],
+  `images/serena.jpeg`,
+  true,
+  true,
+  false,
+  "Persian"
+);
+
+for (let i = 0; i < cats.length; i++) {
+  cats[i].getAge(3, 7);
+  cats[i].render();
+}
+
 //helper functions
 function getRandomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -159,12 +148,27 @@ function getRandomNumber(min, max) {
 
 //6 loop through them and call the getAge and render methods
 
-// 1 create table
-// 2 create first row
-// 3 create second row
-// 4 create the 3 table headers and assign values to the textContent
-// 5 creat 3 table data and assign values to the textContent
-// 6 append the table headers to the first row
-// 7 append the table data to the second row
-// 8 append the two rows to the table
-// 9 append the table to the article
+/*
+    <table>
+          <tr>
+            <th>
+              good with cats
+            </th>
+            <th>
+              good with dogs
+            </th>
+            <th>good with kids</th>
+          </tr>
+          <tr>
+            <td>
+              true
+            </td>
+            <td>
+              true
+            </td>
+            <td>
+              false
+            </td>
+          </tr>
+        </table>
+*/
