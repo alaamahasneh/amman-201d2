@@ -12,10 +12,10 @@
 
 // TODO: dynamically generate kitten objects using form data
 var cats = [];
+var form = document.getElementById("catsForm");
 function Cat(
   name,
   likes,
-  imagePath,
   goodWithKids,
   goodWithDogs,
   goodWithOtherCats,
@@ -24,11 +24,12 @@ function Cat(
   this.name = name;
   this.age = 0;
   this.likes = likes;
-  this.imagePath = imagePath;
+  this.imagePath = `images/${name.toLowerCase()}.jpeg`;
   this.goodWithKids = goodWithKids;
   this.goodWithDogs = goodWithDogs;
   this.goodWithOtherCats = goodWithOtherCats;
   this.breed = breed;
+  this.getAge(3, 7);
   cats.push(this);
 }
 Cat.prototype.getAge = function(min, max) {
@@ -98,28 +99,42 @@ Cat.prototype.render = function() {
   articleEl.appendChild(imgEl);
   imgEl.setAttribute("src", this.imagePath);
 };
+function handleSubmit(event) {
+  event.preventDefault();
+  var name = event.target.name.value;
+  var likes = event.target.likes.value.split(",");
+  var breed = event.target.breed.value;
+  var cats = event.target.cats.checked;
+  var dogs = event.target.dogs.checked;
+  var kids = event.target.kids.checked;
+  var cat = new Cat(name, likes, kids, dogs, cats, breed);
+  cat.render();
+}
+
+//form.addEventListener("submit", handleSubmit);
+form.addEventListener("submit", function(event) {
+  event.preventDefault();
+  var name = event.target.name.value;
+  var likes = event.target.likes.value.split(",");
+  var breed = event.target.breed.value;
+  var cats = event.target.cats.checked;
+  var dogs = event.target.dogs.checked;
+  var kids = event.target.kids.checked;
+  var cat = new Cat(name, likes, kids, dogs, cats, breed);
+  cat.render();
+});
 new Cat(
   "Frankie",
   ["cuddling", "chasing string", "napping", "food"],
-  `images/frankie.jpeg`,
   true,
   false,
   true,
   "British Shorthair"
 );
-new Cat(
-  "Jumper",
-  ["cuddling", "napping"],
-  `images/jumper.jpeg`,
-  false,
-  true,
-  false,
-  "Persian"
-);
+new Cat("Jumper", ["cuddling", "napping"], false, true, false, "Persian");
 new Cat(
   "Serena",
   ["cuddling", "napping", "chasing string"],
-  `images/serena.jpeg`,
   true,
   true,
   false,
