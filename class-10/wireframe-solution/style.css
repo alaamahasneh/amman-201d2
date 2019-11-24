@@ -81,7 +81,7 @@ button {
   border-radius: 3px;
   font-size: 18px;
   margin-top: 10px;
-  transition: 350ms;
+  /* transition: 350ms; */
   cursor: pointer;
 }
 
